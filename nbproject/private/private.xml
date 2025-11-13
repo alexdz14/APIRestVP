@@ -7,6 +7,16 @@
             <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/modelo/mybatis/mapper/ProfesorMapper.xml</file>
             <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/dominio/ProfesorImp.java</file>
             <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/ws/ProfesorWS.java</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/pojo/Alumno.java</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/modelo/mybatis/mapper/AlumnoMapper.xml</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/modelo/mybatis/mybatis-config.xml</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/dominio/AlumnoImp.java</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/ws/AlumnoWS.java</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/pojo/Facultad.java</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/pojo/Carrera.java</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/modelo/mybatis/mapper/CatalogoMapper.xml</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/dominio/CatalogoImp.java</file>
+            <file>file:/D:/stivm/Documentos/NetBeansProjects/APIRestVP/src/java/ws/CatalogoWS.java</file>
         </group>
     </open-files>
 </project-private>
