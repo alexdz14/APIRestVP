@@ -26,8 +26,17 @@
         WHERE idProfesor = #{idProfesor}
     </update>
     
-    <delete id="eliminar" parameterType="pojo.Profesor">
+    <delete id="eliminar" parameterType="int"> 
         DELETE FROM profesor WHERE idProfesor=#{idProfesor}
     </delete>
     
+    <update id="guardar-foto" parameterType="pojo.Profesor">
+        UPDATE profesor SET foto = #{foto} WHERE IdProfesor=#{idProfesor}
+    </update>
+    
+    <select id="obtener-foto" parameterType="int" resultType="pojo.Profesor">
+        SELECT idProfesor, TO_BASE64(foto) AS 'fotoBase64' 
+        FROM profesor 
+        WHERE idProfesor = #{idProfesor}
+    </select>
 </mapper>

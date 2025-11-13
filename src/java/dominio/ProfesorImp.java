@@ -101,8 +101,49 @@ public class ProfesorImp {
             }
         }else{
             respuesta.setError(true);
-            respuesta.setMensaje("Lo sentimos, por el momento no hay conexión al almacenamiento.");
+            respuesta.setMensaje("Lo sentimos, por el momento no hay conexión al almacenamiento de información.");
         }
         return respuesta;
+    }
+    
+    public static Respuesta guardarFoto(int idProfesor, byte[] foto){
+        Respuesta respuesta = new Respuesta();
+        respuesta.setError(true);
+        SqlSession conexionBD = MyBatisUtil.getSession();
+        if(conexionBD != null){
+            try{
+                Profesor profesor = new Profesor();
+                profesor.setIdProfesor(idProfesor);
+                profesor.setFoto(foto);
+                int filasAfectadas = conexionBD.update("profesor.guardar-foto", profesor);
+                conexionBD.commit();
+                if(filasAfectadas > 0){
+                    respuesta.setError(false);
+                    respuesta.setMensaje("Fotografía del profesor(a) subida correctamente");
+                }else{
+                    respuesta.setMensaje("Lo sentimos no se pudo subir la fotografia del profesor(a)");
+                }
+                conexionBD.close();
+            }catch(Exception e){
+                respuesta.setMensaje(e.getMessage());
+            }
+        }else{
+            respuesta.setMensaje("Lo sentimos, por el momento no hay conexión al almacenamiento de información.");
+        }
+        return respuesta;
+    }
+    
+    public static Profesor obtenerFoto(int idProfesor){
+        Profesor profesor = null;
+        SqlSession conexionBD = MyBatisUtil.getSession();
+        if(conexionBD != null){
+            try{
+                profesor = conexionBD.selectOne("profesor.obtener-foto", idProfesor);
+                conexionBD.close();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return profesor;
     }
 }

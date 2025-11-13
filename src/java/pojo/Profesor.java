@@ -11,13 +11,15 @@ public class Profesor {
     private String password;
     private String fechaNacimiento;
     private String fechaContratacion;
-    private int idRol;
+    private Integer idRol;
     private String rol;
-
+    private byte[] foto;
+    private String fotoBase64;
+    
     public Profesor() {
     }
 
-    public Profesor(int idProfesor, String nombre, String apellidoPaterno, String apellidoMaterno, String noPersonal, String password, String fechaNacimiento, String fechaContratacion, int idRol, String rol) {
+    public Profesor(int idProfesor, String nombre, String apellidoPaterno, String apellidoMaterno, String noPersonal, String password, String fechaNacimiento, String fechaContratacion, Integer idRol, String rol, byte[] foto) {
         this.idProfesor = idProfesor;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -28,6 +30,7 @@ public class Profesor {
         this.fechaContratacion = fechaContratacion;
         this.idRol = idRol;
         this.rol = rol;
+        this.foto = foto;
     }
 
     public int getIdProfesor() {
@@ -94,11 +97,11 @@ public class Profesor {
         this.fechaContratacion = fechaContratacion;
     }
 
-    public int getIdRol() {
+    public Integer getIdRol() {
         return idRol;
     }
 
-    public void setIdRol(int idRol) {
+    public void setIdRol(Integer idRol) {
         this.idRol = idRol;
     }
 
@@ -108,6 +111,22 @@ public class Profesor {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public String getFotoBase64() {
+        return fotoBase64;
+    }
+
+    public void setFotoBase64(String fotoBase64) {
+        this.fotoBase64 = fotoBase64;
     }
     
 }

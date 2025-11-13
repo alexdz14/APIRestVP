@@ -82,4 +82,25 @@ public class ProfesorWS {
             throw new BadRequestException(e.getMessage());
         }
     }
+    
+    
+    @Path("subir-foto/{idProfesor}")
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    public Respuesta subirFoto(@PathParam("idProfesor") Integer idProfesor, byte[] foto){
+            if(idProfesor != null && idProfesor > 0 && foto.length > 0){
+                return ProfesorImp.guardarFoto(idProfesor, foto);
+            }
+            throw new BadRequestException();
+    }
+    
+    @Path("obtener-foto/{idProfesor}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Profesor obtenerFoto(@PathParam("idProfesor") Integer idProfesor){
+        if(idProfesor != null && idProfesor > 0){
+            return ProfesorImp.obtenerFoto(idProfesor);
+        }
+        throw new BadRequestException();
+    }
 }
