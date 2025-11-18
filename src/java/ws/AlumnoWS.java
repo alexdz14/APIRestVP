@@ -5,6 +5,7 @@
 package ws;
 
 import dominio.AlumnoImp;
+import dto.RSAutenticacionAlumno;
 import java.util.List;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.GET;
@@ -20,21 +21,21 @@ import pojo.Alumno;
  */
 @Path("alumno")
 public class AlumnoWS {
-    
-@Path("obtener-todos")
-@GET
-@Produces(MediaType.APPLICATION_JSON)
-public List<Alumno> obtenerAlumnos(){
-    return AlumnoImp.obtenerAlumnos();
-}
 
-@Path("obtener-todos-carrera/{idCarrera}")
-@GET
-@Produces(MediaType.APPLICATION_JSON)
-public List<Alumno> obtenerAlumnosCarrera(@PathParam("idCarrera") Integer idCarrera){
-    if(idCarrera != null && idCarrera > 0){
-        return AlumnoImp.obtenerAlumnosPorCarrera(idCarrera);
+    @Path("obtener-todos")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Alumno> obtenerAlumnos() {
+        return AlumnoImp.obtenerAlumnos();
     }
-    throw new BadRequestException();
-}
+
+    @Path("obtener-todos-carrera/{idCarrera}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Alumno> obtenerAlumnosCarrera(@PathParam("idCarrera") Integer idCarrera) {
+        if (idCarrera != null && idCarrera > 0) {
+            return AlumnoImp.obtenerAlumnosPorCarrera(idCarrera);
+        }
+        throw new BadRequestException();
+    }
 }

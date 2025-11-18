@@ -10,7 +10,7 @@ package pojo;
  */
 public class Alumno {
     
-    private int idAlumno;
+    private Integer idAlumno;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
@@ -23,11 +23,12 @@ public class Alumno {
     private String facultad;
     private byte[] foto;
     private String fotoBase64;
+    private String password;
 
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, String nombre, String apellidoPaterno, String apellidoMaterno, String matricula, String correo, String fechaNacimiento, int idCarrera, String carrera, int idFacultad, String facultad, byte[] foto, String fotoBase64) {
+    public Alumno(Integer idAlumno, String nombre, String apellidoPaterno, String apellidoMaterno, String matricula, String correo, String fechaNacimiento, int idCarrera, String carrera, int idFacultad, String facultad, byte[] foto, String fotoBase64, String password) {
         this.idAlumno = idAlumno;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -41,13 +42,14 @@ public class Alumno {
         this.facultad = facultad;
         this.foto = foto;
         this.fotoBase64 = fotoBase64;
+        this.password = password;
     }
 
-    public int getIdAlumno() {
+    public Integer getIdAlumno() {
         return idAlumno;
     }
 
-    public void setIdAlumno(int idAlumno) {
+    public void setIdAlumno(Integer idAlumno) {
         this.idAlumno = idAlumno;
     }
 
@@ -145,6 +147,14 @@ public class Alumno {
 
     public void setFotoBase64(String fotoBase64) {
         this.fotoBase64 = fotoBase64;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }
